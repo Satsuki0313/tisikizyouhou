@@ -59,10 +59,18 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+        if(prediction[0].probability.toFixed(2)>0.80){
+            window.location.href="./zero.html";
+        }else if(prediction[1].probability.toFixed(2)>0.80){
+            window.location.href="./one.html";
+        }else if(prediction[2].probability.toFixed(2)>0.80){
+            window.location.href="./two.html";
+        }else if(prediction[3].probability.toFixed(2)>0.80){
+            window.location.href="./three.html";
+        }else if(prediction[4].probability.toFixed(2)>0.80){
+            window.location.href="./four.html";
+        }else if(prediction[5].probability.toFixed(2)>0.80){
+            window.location.href="./five.html";
         }
     }
 </script>
