@@ -61,7 +61,7 @@
     async function predict() {
     // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        while(1){
+        //while(1){
             if(prediction[0].probability.toFixed(2)>0.80){
                 continue;
             }else if(prediction[1].probability.toFixed(2)>0.90){
@@ -75,7 +75,7 @@
             }else if(prediction[5].probability.toFixed(2)>0.90){
                 window.location.href="./five.html";
             }
-        }
+        //}
         
     }
 </script>
