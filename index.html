@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+</body>
+</html>
+
 <div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
@@ -53,7 +55,8 @@
         webcam.update(); // update the webcam frame
         await predict();
         window.requestAnimationFrame(loop);
-    
+    }
+
 // run the webcam image through the image model
     async function predict() {
     // predict can take in an image, video or canvas html element
@@ -78,6 +81,4 @@
 </script>
     
 
-</body>
-</html>
 
